@@ -18,7 +18,7 @@ interface Attachment {
 
 function sendToSlack(
   url: string,
-  data: { text: string; attachments: Attachment[] }
+  data: { text: string; attachments: Attachment[] },
 ) {
   UrlFetchApp.fetch(url, {
     method: "post",
@@ -40,6 +40,9 @@ function onFormSubmit(e: FormEvent) {
       text: response.toString(),
     });
   });
+
+  if (!SLACK_URL) throw new Error(`SLACK_URL is not set`);
+  if (!TITLE) throw new Error(`TITLE is not set`);
 
   sendToSlack(SLACK_URL, {
     text: TITLE,

@@ -1,29 +1,35 @@
 {
   "name": "gas-google-form-notifier-to-slack",
   "version": "1.0.0",
-  "description": "## Usage",
-  "main": "index.js",
+  "description": "Google Formの通知をGASでSlackに通知する",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "login": "clasp login",
+    "clone": "clasp clone --rootDir=./src",
+    "push": "clasp push",
+    "lint": "eslint .",
+    "format": "prettier . --write"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/munky69rock/gas-google-form-notifier-to-slack.git"
   },
-  "author": "",
+  "author": "Masayuki Uehara",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/munky69rock/gas-google-form-notifier-to-slack/issues"
   },
   "homepage": "https://github.com/munky69rock/gas-google-form-notifier-to-slack#readme",
   "dependencies": {
-    "@types/google-apps-script": "^1.0.45"
+    "@types/google-apps-script": "^1.0.83"
   },
   "devDependencies": {
-    "@google/clasp": "^2.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.15.0",
-    "@typescript-eslint/parser": "^5.15.0",
-    "eslint": "^8.11.0",
-    "typescript": "^4.6.2"
+    "@eslint/js": "^9.9.0",
+    "@google/clasp": "^2.4.2",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^8.57.0",
+    "prettier": "3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0"
   }
 }
