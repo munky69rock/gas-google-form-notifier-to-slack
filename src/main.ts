@@ -30,7 +30,12 @@ function sendToSlack(
 function onFormSubmit(e: FormEvent) {
   const formResponse = e.response;
   const itemResponses = formResponse.getItemResponses();
-  const attachments: Attachment[] = [];
+  const attachments: Attachment[] = [
+    {
+      title: "メールアドレス",
+      text: formResponse.getRespondentEmail(),
+    },
+  ];
 
   itemResponses.forEach((itemResponse) => {
     const title = itemResponse.getItem().getTitle();
